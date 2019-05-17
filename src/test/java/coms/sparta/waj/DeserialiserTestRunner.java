@@ -15,6 +15,6 @@ import org.junit.runners.Suite;
         }
 )
 
-public class TestRunner
+public class DeserialiserTestRunner
 {
 }
