@@ -13,7 +13,7 @@ public class HttpManager
 {
     private CloseableHttpClient httpClient;
     private CloseableHttpResponse httpResponse;
-    private PropertiesReader propertiesReader;
+    private PropertiesReader propertiesReader = new PropertiesReader();
 
 
     public HttpManager()

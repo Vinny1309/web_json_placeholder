@@ -7,7 +7,7 @@ import coms.sparta.waj.webmanagement.HttpManager;
 import java.io.File;
 import java.io.IOException;
 
-public class UserDeserialiser
+public class UserDeserialiser extends Deserialiser
 {
     private UserDto userDto;
 
@@ -32,16 +32,6 @@ public class UserDeserialiser
         {
             e.printStackTrace();
         }
-    }
-
-
-    private boolean isUrl(String fileLocation)
-    {
-        if (fileLocation.contains("http"))
-        {
-            return true;
-        }
-        return false;
     }
 
     private void constructFromFile(String fileLocation)

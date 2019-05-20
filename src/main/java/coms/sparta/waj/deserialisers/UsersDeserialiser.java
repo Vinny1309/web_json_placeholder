@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class UsersDeserialiser
+public class UsersDeserialiser extends Deserialiser
 {
     private UserDto[] userDto;
 
