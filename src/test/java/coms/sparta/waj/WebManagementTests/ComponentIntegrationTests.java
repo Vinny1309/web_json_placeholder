@@ -50,7 +50,7 @@ public class ComponentIntegrationTests
         Assert.assertTrue(userArray.length > 0);
     }
 
-    //Extracts a random zipcode and checks that it fits the correct format. 
+    //Extracts a random zipcode and checks that it fits the correct format.
     @Test
     public void testMultiPostcodePattern()
     {
