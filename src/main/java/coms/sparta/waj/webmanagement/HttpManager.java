@@ -23,21 +23,20 @@ public class HttpManager
 
     public String getSingleUserJson()
     {
-        String apiTarget = propertiesReader.getSingleUserUrl();
-        HttpGet httpGet = new HttpGet(apiTarget);
-        updateResponse(httpGet);
-        return getResponseBody();
+        return getJsonFromUrl(propertiesReader.getSingleUserUrl());
     }
 
     public String getAllUserJson()
     {
-        String apiTarget = propertiesReader.getAllUsersUrl();
+        return getJsonFromUrl(propertiesReader.getAllUsersUrl());
+    }
+
+    public String getJsonFromUrl(String apiTarget)
+    {
         HttpGet httpGet = new HttpGet(apiTarget);
         updateResponse(httpGet);
         return getResponseBody();
     }
-
-
 
     private void updateResponse(HttpGet request)
     {
