@@ -28,6 +28,7 @@ public class HttpManagerTests
         Assert.assertTrue(returnString.matches("\\u005b[\\s\\S]*\\u005d"));
     }
 
+    //Checks that the string is bounded by braces, so not an array.
     @Test
     public void testSingleUserRetrieval()
     {

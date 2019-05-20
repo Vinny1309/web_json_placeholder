@@ -39,8 +39,7 @@ public class UsersDeserialiserTests
     public void getNestedFromArray()
     {
         Random random = new Random();
-        int index = random.nextInt(usersArray.length) - 1;
-
+        int index = random.nextInt(usersArray.length - 1) ;
         assertTrue(usersArray[index].getAddress().getGeo().getLat().length() > 0);
     }
 
@@ -48,8 +47,7 @@ public class UsersDeserialiserTests
     public void getNestedFromList()
     {
         Random random = new Random();
-        int index = random.nextInt(usersList.size()) - 1;
-
+        int index = random.nextInt(usersList.size()- 1);
         assertTrue(usersList.get(index).getAddress().getGeo().getLat().length() > 0);
     }
 
@@ -60,13 +58,13 @@ public class UsersDeserialiserTests
     {
         Random random = new Random();
 
-        int index = random.nextInt(usersList.size()) - 1;
+        int index = random.nextInt(usersList.size() - 1) ;
         System.out.println("Sample data from element " + index);
         showSomeValues(index);
 
         System.out.println();
 
-        index = random.nextInt(usersList.size()) - 1;
+        index = random.nextInt(usersList.size() - 1) ;
         System.out.println("Sample data from element " + index);
         showSomeValues(index);
     }
