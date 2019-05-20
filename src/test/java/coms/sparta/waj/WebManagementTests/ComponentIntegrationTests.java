@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Random;
 
 public class ComponentIntegrationTests
 {
@@ -35,8 +36,9 @@ public class ComponentIntegrationTests
     }
 
 
+    //Confirms that the returned list and array are the same size and greater than 0.
     @Test
-    public void testMultiDtoReturns()
+    public void testMultiDtoReturnSize()
     {
         String usersUrl = reader.getAllUsersUrl();
         UsersDeserialiser multiDeserialiser = new UsersDeserialiser(usersUrl);
@@ -45,9 +47,25 @@ public class ComponentIntegrationTests
         UserDto[] userArray = multiDeserialiser.getUsersDto();
 
         Assert.assertEquals(userArray.length, userList.size());
+        Assert.assertTrue(userArray.length > 0);
     }
 
-    
+    //Extracts a random zipcode and checks that it fits the correct format. 
+    @Test
+    public void testMultiPostcodePattern()
+    {
+        String usersUrl = reader.getAllUsersUrl();
+        UsersDeserialiser multiDeserialiser = new UsersDeserialiser(usersUrl);
+
+        List<UserDto> userList = multiDeserialiser.getUsersAsList();
+
+        Random random = new Random();
+
+        String postcode = userList.get(random.nextInt(userList.size()-1)).getAddress().getZipcode();
+        Assert.assertTrue(postcode.matches("\\d{5}-\\d{4}"));
+    }
+
+
 
 
 }
